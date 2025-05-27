@@ -11,9 +11,7 @@ def invalid_number(number_str):
 
 prompt('Welcome to Calculator')
 
-new_calc = 'Y'
-
-while new_calc == 'Y':
+while True:
     prompt('Please enter the first number: ')
     number1 = input()
 
@@ -49,3 +47,6 @@ while new_calc == 'Y':
 
     prompt('Perform another calculation?\nY) Yes N) No')
     new_calc = input()
+
+    if new_calc and new_calc[0].lower() != 'y':
+        break
