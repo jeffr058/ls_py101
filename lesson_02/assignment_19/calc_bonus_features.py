@@ -1,4 +1,5 @@
 import json
+import pdb
 
 with open('calculator_messages.json', 'r') as file:
     messages = json.load(file)
@@ -11,9 +12,18 @@ user_lang = messages_en
 def prompt(message):
     print(f"==> {message}")
 
+# ----NUM TYPE FUNCTION----
+def num_type(number_str):
+    if '.' in number_str:
+        return float(number_str)
+    elif int(number_str):
+        return int(number_str)
+    elif number_str == '0':
+        return int('0')
+
 def invalid_number(number_str):
     try:
-        int(number_str)
+        num_type(number_str)
     except ValueError:
         return True
 
@@ -58,13 +68,13 @@ while True:
 
     match operation:
         case '1':
-            output = int(number1) + int(number2)
+            output = num_type(number1) + num_type(number2)
         case '2':
-            output = int(number1) - int(number2)
+            output = num_type(number1) - num_type(number2)
         case '3':
-            output = int(number1) * int(number2)
+            output = num_type(number1) * num_type(number2)
         case '4':
-            output = int(number1) / int(number2)
+            output = num_type(number1) / num_type(number2)
 
     prompt(f"{user_lang['result']} {output}")
 
