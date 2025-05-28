@@ -1,10 +1,22 @@
 {
-  "welcome": "Welcome to Calculator",
-  "num1": "Please enter the first number: ",
-  "num2": "Please enter the second number: ",
-  "num_error": "Hmm... that doesn't look like a valid number.",
-  "operator": "Choose your operation:\n1) Add 2) Subtract 3) Multiply 4) Divide",
-  "operator_error": "You must choose 1, 2, 3, or 4",
-  "result": "The result is: ",
-  "new_calc": "Perform another calculation?\nY) Yes N) No"
+  "english": {
+    "welcome": "Welcome to Calculator",
+    "num1": "Please enter the first number: ",
+    "num2": "Please enter the second number: ",
+    "num_error": "Hmm... that doesn't look like a valid number.",
+    "operator": "Choose your operation:\n1) Add 2) Subtract 3) Multiply 4) Divide",
+    "operator_error": "You must choose 1, 2, 3, or 4",
+    "result": "The result is: ",
+    "new_calc": "Perform another calculation?\nY) Yes N) No"
+  },
+  "french": {
+    "welcome": "Bienvenue dans la calculatrice",
+    "num1": "Veuillez saisir le premier nombre: ",
+    "num2": "Veuillez saisir le deuxième nombre: ",
+    "num_error": "Hmm… ça ne semble pas être un nombre valide.",
+    "operator": "Choisissez votre opération:\n1) Additionner 2) Soustraire 3) Multiplier 4) Diviser",
+    "operator_error": "Vous devez choisir 1, 2, 3 ou 4",
+    "result": "Le résultat est: ",
+    "new_calc": "Effectuer un autre calcul?\nO) Oui N) Non"
+  }
 }
