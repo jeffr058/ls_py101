@@ -1,0 +1,10 @@
+{
+  "welcome": "Welcome to Calculator",
+  "num1": "Please enter the first number: ",
+  "num2": "Please enter the second number: ",
+  "num_error": "Hmm... that doesn't look like a valid number.",
+  "operator": "Choose your operation:\n1) Add 2) Subtract 3) Multiply 4) Divide",
+  "operator_error": "You must choose 1, 2, 3, or 4",
+  "result": "The result is: ",
+  "new_calc": "Perform another calculation?\nY) Yes N) No"
+}
