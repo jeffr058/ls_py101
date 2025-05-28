@@ -22,15 +22,15 @@ def invalid_number(number_str):
 prompt(messages['language'])
 lang_choice = input()
 
+while lang_choice not in ['1', '2']:
+    prompt(messages['lang_error'])
+    lang_choice = input()
+    
 match lang_choice:
     case '1':
         user_lang = messages_en
     case '2':
         user_lang = messages_fr
-
-while lang_choice not in ['1', '2']:
-    prompt(messages['lang_error'])
-    lang_choice = input()
 
 prompt(user_lang['welcome'])
 
