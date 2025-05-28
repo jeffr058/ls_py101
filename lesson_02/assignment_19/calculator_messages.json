@@ -1,4 +1,6 @@
 {
+  "language": "Choose your language:\n1) English 2) French",
+  "lang_error": "You must choose 1 or 2",
   "english": {
     "welcome": "Welcome to Calculator",
     "num1": "Please enter the first number: ",
@@ -17,6 +19,6 @@
     "operator": "Choisissez votre opération:\n1) Additionner 2) Soustraire 3) Multiplier 4) Diviser",
     "operator_error": "Vous devez choisir 1, 2, 3 ou 4",
     "result": "Le résultat est: ",
-    "new_calc": "Effectuer un autre calcul?\nO) Oui N) Non"
+    "new_calc": "Effectuer un autre calcul?\nY) Oui N) Non"
   }
 }
