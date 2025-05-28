@@ -1,5 +1,4 @@
 import json
-import pdb
 
 with open('calculator_messages.json', 'r') as file:
     messages = json.load(file)
@@ -12,7 +11,6 @@ user_lang = messages_en
 def prompt(message):
     print(f"==> {message}")
 
-# ----NUM TYPE FUNCTION----
 def num_type(number_str):
     if '.' in number_str:
         return float(number_str)
