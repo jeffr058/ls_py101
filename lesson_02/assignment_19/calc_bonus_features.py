@@ -25,7 +25,7 @@ lang_choice = input()
 while lang_choice not in ['1', '2']:
     prompt(messages['lang_error'])
     lang_choice = input()
-    
+
 match lang_choice:
     case '1':
         user_lang = messages_en
@@ -66,7 +66,7 @@ while True:
         case '4':
             output = int(number1) / int(number2)
 
-    prompt(f'{user_lang['result']} {output}')
+    prompt(f"{user_lang['result']} {output}")
 
     prompt(user_lang['new_calc'])
     new_calc = input()
