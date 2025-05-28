@@ -16,10 +16,8 @@ def prompt(message):
 def num_type(number_str):
     if '.' in number_str:
         return float(number_str)
-    elif int(number_str):
+    else:
         return int(number_str)
-    elif number_str == '0':
-        return int('0')
 
 def invalid_number(number_str):
     try:
