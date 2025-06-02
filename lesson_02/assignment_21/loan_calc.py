@@ -2,20 +2,20 @@ def prompt(message):
     print(f'==> {message}')
 
 def check_input(input_str):
-    if (input_str == ''):
-        return False
-    elif any(not char.isdecimal() for char in input_str):
-        if ('.' in input_str) and (input_str.count('.') <= 1):
-            return True
-        else:
-            return False
-    else:
+    if '-' in input_str:
         return True
+    
+    try:
+        float(input_str)
+    except ValueError:
+        return True
+    
+    return False
 
 prompt('What is the loan amount?')
 loan_amount = input().replace('$', '').replace(',', '')
 
-while not check_input(loan_amount):
+while check_input(loan_amount):
     prompt('Please enter a valid amount.')
     loan_amount = input().replace('$', '').replace(',', '')
 
