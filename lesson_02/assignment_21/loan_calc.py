@@ -4,10 +4,11 @@ def prompt(message):
 def check_input(input_str):
     if (input_str == ''):
         return False
-    elif any(not char.isalnum() for char in input_str):
-        return False
-    elif any(char.isalpha() for char in input_str):
-        return False
+    elif any(not char.isdecimal() for char in input_str):
+        if ('.' in input_str) and (input_str.count('.') <= 1):
+            return True
+        else:
+            return False
     else:
         return True
     
@@ -21,7 +22,7 @@ def clean_input(input_str):
     clean_str = input_str
     
     return clean_str
-
+    
 def set_num_type(clean_str):
     if '.' in clean_str:
         return float(clean_str)
