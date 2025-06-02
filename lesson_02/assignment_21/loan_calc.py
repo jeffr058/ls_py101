@@ -2,12 +2,14 @@ def prompt(message):
     print(f'==> {message}')
 
 def check_input(input_str):
-    if (input_str == '') or ('-' in input_str):
+    if (input_str == ''):
         return False
-    elif clean_input(input_str):  # need better way to pass only numbers through
-        return True
+    elif any(not char.isalnum() for char in input_str):
+        return False
+    elif any(char.isalpha() for char in input_str):
+        return False
     else:
-        return False
+        return True
     
 def clean_input(input_str):
     symbols = ['$', ',']
