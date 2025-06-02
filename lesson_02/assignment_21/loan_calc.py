@@ -31,11 +31,13 @@ def set_num_type(clean_str):
 prompt('What is the loan amount?')
 loan_amount = clean_input(input())
 
-loan_amount_clean = 
+while not check_input(loan_amount):
+    prompt('Please enter a valid amount.')
+    loan_amount = clean_input(input())
 
-# while not check_input(loan_amount):
-#     prompt('Please enter a valid amount.')
-#     loan_amount = input()
+loan_amount_clean = set_num_type(loan_amount)
+print(type(loan_amount_clean))
+print(loan_amount_clean)
 
 # prompt('What is the APR?')
 # apr = input()
