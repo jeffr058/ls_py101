@@ -21,17 +21,23 @@ def check_input(input_str):
 
 # loan_amount_clean = float(loan_amount)
 
-prompt('What is the APR?')
-apr = input()
+# prompt('What is the APR?')
+# apr = input()
 
-while check_input(apr):
+# while check_input(apr):
+#     prompt('Please enter a valid number.')
+#     apr = input()
+
+# apr_clean = float(apr)
+
+prompt('What is the loan duration in years?')
+loan_duration = input()
+
+while check_input(loan_duration):
     prompt('Please enter a valid number.')
-    apr = input()
+    loan_duration = input()
 
-apr_clean = float(apr)
+loan_duration_clean = float(loan_duration)
 
-print(type(apr_clean))
-print(apr_clean)
-
-# prompt('What is the loan duration?')
-# loan_duration = input()
+print(type(loan_duration_clean))
+print(loan_duration_clean)
