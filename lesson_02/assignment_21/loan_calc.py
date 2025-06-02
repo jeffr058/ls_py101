@@ -22,7 +22,7 @@ def clean_input(input_str):
     
     return clean_str
 
-def num_type(clean_str):
+def set_num_type(clean_str):
     if '.' in clean_str:
         return float(clean_str)
     else:
