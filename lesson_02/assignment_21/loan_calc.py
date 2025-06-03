@@ -34,7 +34,10 @@ def calculate_monthly_payment(amount, int_rate, length):
     if int_rate == 0:
         monthly_payment = amount / length
     else:
-        monthly_payment = amount * (int_rate / (1 - (1 + int_rate) ** (-length)))
+        monthly_payment = amount * (
+            int_rate /
+            (1 - (1 + int_rate) ** (-length))
+        )
     return monthly_payment
 
 prompt(messages['welcome'])
