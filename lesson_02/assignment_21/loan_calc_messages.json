@@ -1,14 +1,14 @@
 {
   "welcome": "Welcome to the Loan Calculator!",
   "get_loan_amount": "What is the loan amount?",
+  "confirm_loan_amount": "The loan amount is $",
   "get_apr": "What is the APR?",
+  "confirm_apr": "The APR is ",
   "get_loan_duration": "What is the loan duration in years?",
+  "confirm_loan_duration": "The loan duration is ",
   "monthly_payment": "The monthly payment is $",
   "new_calc": "Perform new calculation?\nY) Yes  N) No",
   "goodbye": "Goodbye!",
   "invalid_input": "Please enter a valid number.",
-  "confirm_loan_amount": "The loan amount is $",
-  "confirm_apr": "The APR is ",
-  "confirm_loan_duration": "The loan duration is",
   "is_correct": "Is this correct?\nY) Yes  N) No"
 }
