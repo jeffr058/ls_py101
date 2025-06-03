@@ -9,12 +9,12 @@ def prompt(message):
 def is_input_number(input_str):
     if '-' in input_str:
         return True
-    
+
     try:
         float(input_str)
     except ValueError:
         return True
-    
+
     return False
 
 def is_input_correct(input_type, display_input):
@@ -22,11 +22,11 @@ def is_input_correct(input_type, display_input):
     prompt(messages['is_correct'])
 
     user_confirm = input()
-    # check this logic
+
     if user_confirm and (user_confirm[0].casefold() != 'y'):
         return False
-    else:
-        return True
+
+    return True
 
 def calculate_monthly_payment(amount, int_rate, length):
     monthly_payment = amount * (int_rate / (1 - (1 + int_rate) ** (-length)))
@@ -43,7 +43,7 @@ while True:
         while is_input_number(loan_amount):
             prompt(messages['invalid_input'])
             loan_amount = input().replace('$', '').replace(',', '')
-        
+
         loan_amount_clean = float(loan_amount)
 
         display_loan_amount = f'{loan_amount_clean:,.2f}.'
@@ -60,7 +60,7 @@ while True:
             apr = input()
 
         display_apr = f'{apr}%.'
-        
+
         if is_input_correct('confirm_apr', display_apr):
             break
 
@@ -83,7 +83,11 @@ while True:
     loan_duration_clean = float(loan_duration)
     loan_duration_months = loan_duration_clean * 12
 
-    monthly_payment = calculate_monthly_payment(loan_amount_clean, apr_monthly, loan_duration_months)
+    monthly_payment = calculate_monthly_payment(
+        loan_amount_clean,
+        apr_monthly,
+        loan_duration_months,
+    )
 
     prompt(messages['monthly_payment']+ f'{monthly_payment:,.2f}.')
 
