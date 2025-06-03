@@ -6,7 +6,7 @@ with open('loan_calc_messages.json', 'r') as file:
 def prompt(message):
     print(f'==> {message}')
 
-def is_input_number(input_str):
+def is_input_invalid(input_str):
     if '-' in input_str:
         return True
 
@@ -40,7 +40,7 @@ while True:
         prompt(messages['get_loan_amount'])
         loan_amount = input().replace('$', '').replace(',', '')
 
-        while is_input_number(loan_amount):
+        while is_input_invalid(loan_amount):
             prompt(messages['invalid_input'])
             loan_amount = input().replace('$', '').replace(',', '')
 
@@ -55,7 +55,7 @@ while True:
         prompt(messages['get_apr'])
         apr = input()
 
-        while is_input_number(apr):
+        while is_input_invalid(apr):
             prompt(messages['invalid_input'])
             apr = input()
 
@@ -71,7 +71,7 @@ while True:
         prompt(messages['get_loan_duration'])
         loan_duration = input()
 
-        while is_input_number(loan_duration):
+        while is_input_invalid(loan_duration):
             prompt(messages['invalid_input'])
             loan_duration = input()
 
