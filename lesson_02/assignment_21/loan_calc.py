@@ -22,7 +22,7 @@ def is_input_correct(input_type, display_input):
     prompt(messages['is_correct'])
 
     user_confirm = input()
-
+    # check this logic
     if user_confirm and (user_confirm[0].casefold() != 'y'):
         return False
     else:
@@ -30,7 +30,7 @@ def is_input_correct(input_type, display_input):
 
 def calculate_monthly_payment(amount, int_rate, length):
     monthly_payment = amount * (int_rate / (1 - (1 + int_rate) ** (-length)))
-    return round(monthly_payment, 2)
+    return monthly_payment
 
 prompt(messages['welcome'])
 
@@ -85,7 +85,7 @@ while True:
 
     monthly_payment = calculate_monthly_payment(loan_amount_clean, apr_monthly, loan_duration_months)
 
-    prompt(messages['monthly_payment']+ f'{monthly_payment}.')
+    prompt(messages['monthly_payment']+ f'{monthly_payment:,.2f}.')
 
     prompt(messages['new_calc'])
     new_calc = input()
