@@ -15,6 +15,6 @@ outer()
 ```
 
 ## My solution
-The code will print 'Hello World'.
+The code will print Hello World.
 
 When invoked by outer(), inner() accesses and prints outer_var along with locally initialized inner_var. When outer() is invoked, print() prints its arguments as a string.
