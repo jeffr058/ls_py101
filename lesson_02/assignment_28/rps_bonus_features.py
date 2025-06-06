@@ -35,16 +35,18 @@ def display_winner(player, computer):
         prompt("It's a tie!")
 
 while True:
+    choice = ''
+
     prompt(f'Choose one: {', '.join(VALID_CHOICES)}')
 
     while True:
         user_entry = input()
-
         for valid_choice in VALID_CHOICES:
             if user_entry.lower() == valid_choice[0:len(user_entry)]:
                 choice = valid_choice
+                break
     
-        if choice in VALID_CHOICES:    
+        if choice in VALID_CHOICES:
             break
         else:
             prompt("That's not a valid choice.")
@@ -58,7 +60,6 @@ while True:
         answer = input().lower()
 
         if answer.startswith('n') or answer.startswith('y'):
-            choice = ''
             break
         
         prompt("That's not a valid choice.")
@@ -66,5 +67,5 @@ while True:
     if answer[0] == 'n':
         break
 
-# why does 's' result in choosing spock?
+# if input is 's' prompt user to specify?
 # on prompt print available shortened input options
