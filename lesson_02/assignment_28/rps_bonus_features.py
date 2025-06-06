@@ -58,6 +58,7 @@ while True:
         answer = input().lower()
 
         if answer.startswith('n') or answer.startswith('y'):
+            choice = ''
             break
         
         prompt("That's not a valid choice.")
@@ -65,4 +66,5 @@ while True:
     if answer[0] == 'n':
         break
 
-# 's' gets spock
+# why does 's' result in choosing spock?
+# on prompt print available shortened input options
