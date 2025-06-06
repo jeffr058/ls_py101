@@ -18,13 +18,13 @@ def determine_winner(player, computer):
         winner = 'player'
     elif player == computer:
         winner = 'tie'
-    else: 
+    else:
         winner = 'computer'
     return winner
 
 def display_winner(player, computer):
     prompt(f'You chose {player}, computer chose {computer}.')
-    
+
     winner = determine_winner(player, computer)
 
     if winner == 'player':
@@ -37,7 +37,10 @@ def display_winner(player, computer):
 while True:
     choice = ''
 
-    prompt(f'Choose one: {', '.join(VALID_CHOICES)}')
+    prompt(
+        f'Choose one: {', '.join(VALID_CHOICES)}'
+        '\n"r": rock, "p": paper, "sc": scissors, "l": lizard, "sp": Spock'
+    )
 
     while True:
 
@@ -45,7 +48,7 @@ while True:
             user_entry = input()
 
             if user_entry == 's':
-                prompt('Please use "sc" for scissors or "sp" for spock.')
+                prompt('Please use "sc" for scissors or "sp" for Spock.')
             else:
                 break
 
@@ -56,8 +59,8 @@ while True:
 
         if choice in VALID_CHOICES:
             break
-        else:
-            prompt("That's not a valid choice.")
+
+        prompt("That's not a valid choice.")
 
     computer_choice = random.choice(VALID_CHOICES)
 
@@ -70,10 +73,11 @@ while True:
 
         if answer.startswith('n') or answer.startswith('y'):
             break
-        else:
-            prompt("That's not a valid choice.")
+
+        prompt("That's not a valid choice.")
 
     if answer[0] == 'n':
         break
 
-# on prompt print available shortened input options
+# capitalize spock in the prompt for VALID_CHOICES?
+# use JSON file for messages?
