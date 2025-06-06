@@ -2,6 +2,14 @@ import random
 
 VALID_CHOICES = ['rock', 'paper', 'scissors', 'lizard', 'spock']
 
+COMBINATIONS = {
+    'rock': ('scissors', 'lizard'),
+    'paper': ('rock', 'spock'),
+    'scissors': ('paper', 'lizard'),
+    'lizard': ('paper', 'spock'),
+    'spock': ('scissors', 'rock'),
+}
+
 def prompt(message):
     print(f'==> {message}')
 
