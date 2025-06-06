@@ -13,30 +13,23 @@ COMBINATIONS = {
 def prompt(message):
     print(f'==> {message}')
 
+def determine_winner(player, computer):
+    if computer in COMBINATIONS[player]:
+        winner = 'player'
+    elif player == computer:
+        winner = 'tie'
+    else: 
+        winner = 'computer'
+    return winner
+
 def display_winner(player, computer):
     prompt(f'You chose {player}, computer chose {computer}.')
+    
+    winner = determine_winner(player, computer)
 
-    if ((player == 'rock' and computer == 'scissors') or
-        (player == 'rock' and computer == 'lizard') or
-        (player == 'paper' and computer == 'rock') or
-        (player == 'paper' and computer == 'spock') or
-        (player == 'scissors' and computer == 'paper') or
-        (player == 'scissors' and computer == 'lizard') or
-        (player == 'lizard' and computer == 'paper') or
-        (player == 'lizard' and computer == 'spock') or
-        (player == 'spock' and computer == 'scissors') or
-        (player == 'spock' and computer == 'rock')):
+    if winner == 'player':
         prompt('You win!')
-    elif ((computer == 'rock' and player == 'scissors') or
-        (computer == 'rock' and player == 'lizard') or
-        (computer == 'paper' and player == 'rock') or
-        (computer == 'paper' and player == 'spock') or
-        (computer == 'scissors' and player == 'paper') or
-        (computer == 'scissors' and player == 'lizard') or
-        (computer == 'lizard' and player == 'paper') or
-        (computer == 'lizard' and player == 'spock') or
-        (computer == 'spock' and player == 'scissors') or
-        (computer == 'spock' and player == 'rock')):
+    elif winner == 'computer':
         prompt('Computer wins!')
     else:
         prompt("It's a tie!")
@@ -68,6 +61,7 @@ while True:
 
     computer_choice = random.choice(VALID_CHOICES)
 
+    determine_winner(choice, computer_choice)
     display_winner(choice, computer_choice)
 
     while True:
