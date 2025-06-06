@@ -38,13 +38,14 @@ while True:
     choice = ''
 
     prompt(
-        f'Choose one: {', '.join(VALID_CHOICES)}'
-        '\n"r": rock, "p": paper, "sc": scissors, "l": lizard, "sp": Spock'
+        f'Choose one: {', '.join(VALID_CHOICES)}\n'
+        '---------------------------------------------------------------\n'
+        '"r": rock, "p": paper, "sc": scissors, "l": lizard, "sp": Spock'
     )
 
     while True:
 
-        while True:
+        while True:  # clarify_s_input()
             user_entry = input()
 
             if user_entry == 's':
@@ -79,5 +80,5 @@ while True:
     if answer[0] == 'n':
         break
 
-# capitalize spock in the prompt for VALID_CHOICES?
+# capitalize spock in the prompt for VALID_CHOICES? (currently inconsistent)
 # use JSON file for messages?
