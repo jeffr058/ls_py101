@@ -1,5 +1,4 @@
 import random
-import pdb
 
 VALID_CHOICES = ['rock', 'paper', 'scissors', 'lizard', 'spock']
 
@@ -40,12 +39,20 @@ while True:
     prompt(f'Choose one: {', '.join(VALID_CHOICES)}')
 
     while True:
-        user_entry = input()
+
+        while True:
+            user_entry = input()
+
+            if user_entry == 's':
+                prompt('Please use "sc" for scissors or "sp" for spock.')
+            else:
+                break
+
         for valid_choice in VALID_CHOICES:
             if user_entry.lower() == valid_choice[0:len(user_entry)]:
                 choice = valid_choice
                 break
-    
+
         if choice in VALID_CHOICES:
             break
         else:
@@ -61,11 +68,10 @@ while True:
 
         if answer.startswith('n') or answer.startswith('y'):
             break
-        
-        prompt("That's not a valid choice.")
+        else:
+            prompt("That's not a valid choice.")
 
     if answer[0] == 'n':
         break
 
-# if input is 's' prompt user to specify?
 # on prompt print available shortened input options
