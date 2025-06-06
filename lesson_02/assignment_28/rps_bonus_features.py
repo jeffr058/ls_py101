@@ -1,4 +1,5 @@
 import random
+import pdb
 
 VALID_CHOICES = ['rock', 'paper', 'scissors', 'lizard', 'spock']
 
@@ -35,11 +36,18 @@ def display_winner(player, computer):
 
 while True:
     prompt(f'Choose one: {', '.join(VALID_CHOICES)}')
-    choice = input()
 
-    while choice not in VALID_CHOICES:
-        prompt("That's not a valid choice.")
-        choice = input()
+    while True:
+        user_entry = input()
+
+        for valid_choice in VALID_CHOICES:
+            if user_entry.lower() == valid_choice[0:len(user_entry)]:
+                choice = valid_choice
+    
+        if choice in VALID_CHOICES:    
+            break
+        else:
+            prompt("That's not a valid choice.")
 
     computer_choice = random.choice(VALID_CHOICES)
 
@@ -51,8 +59,10 @@ while True:
 
         if answer.startswith('n') or answer.startswith('y'):
             break
-        else:
-            prompt("That's not a valid choice.")
+        
+        prompt("That's not a valid choice.")
 
     if answer[0] == 'n':
         break
+
+# 's' gets spock
