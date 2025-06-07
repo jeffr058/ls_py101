@@ -39,7 +39,7 @@ while True:
 
     prompt(
         f'Choose one: {', '.join(VALID_CHOICES)}\n'
-        '---------------------------------------------------------------\n'
+        '--------------------\n'
         '"r": rock, "p": paper, "sc": scissors, "l": lizard, "sp": Spock'
     )
 
