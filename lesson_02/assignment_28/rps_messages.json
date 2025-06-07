@@ -1,0 +1,16 @@
+{
+  "player_choice": "You chose ",
+  "computer_choice": "Computer chose ",
+  "player_wins": "You win!",
+  "computer_wins": "Computer wins!",
+  "tie": "It's a tie.",
+  "choose": "Choose one: ",
+  "separator": "--------------------",
+  "shortened_choices": "\"r\": rock, \"p\": paper, \"sc\": scissors, \"l\": lizard, \"sp\": spock",
+  "specify_s": "Please use \"sc\" for scissors or \"sp\" for spock.",
+  "invalid": "That's not a valid choice.",
+  "player_score": "Your score: ",
+  "computer_score": "Computer's score: ",
+  "grand_winner": "The grand winner is: ",
+  "play_again": "Do you want to play again? (y/n)"
+}

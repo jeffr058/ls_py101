@@ -1,4 +1,8 @@
+import json
 import random
+
+with open('rps_messages.json', 'r') as file:
+    messages = json.load(file)
 
 VALID_CHOICES = ['rock', 'paper', 'scissors', 'lizard', 'spock']
 
@@ -23,33 +27,37 @@ def determine_winner(player, computer):
     return winner
 
 def display_winner(player, computer):
-    prompt(f'You chose {player}, computer chose {computer}.')
+    prompt(messages['player_choice'] + f'{player}. ' + 
+           messages['computer_choice'] + f'{computer}.')
 
     winner = determine_winner(player, computer)
 
     if winner == 'player':
-        prompt('You win!')
+        prompt(messages['player_wins'])
     elif winner == 'computer':
-        prompt('Computer wins!')
+        prompt(messages['computer_wins'])
     else:
-        prompt("It's a tie!")
+        prompt(messages['tie'])
+        
+    prompt(messages['separator'])
 
 while True:
     choice = ''
 
     prompt(
-        f'Choose one: {', '.join(VALID_CHOICES)}\n'
-        '--------------------\n'
-        '"r": rock, "p": paper, "sc": scissors, "l": lizard, "sp": Spock'
+        messages['choose'] + f'{', '.join(VALID_CHOICES)}\n' + 
+        messages['separator'] + 
+        messages['shortened_choices']
     )
 
     while True:
 
-        while True:  # clarify_s_input()
+        while True:
+
             user_entry = input()
 
             if user_entry == 's':
-                prompt('Please use "sc" for scissors or "sp" for Spock.')
+                prompt(messages['specify_s'])
             else:
                 break
 
@@ -61,7 +69,7 @@ while True:
         if choice in VALID_CHOICES:
             break
 
-        prompt("That's not a valid choice.")
+        prompt(messages['invalid'])
 
     computer_choice = random.choice(VALID_CHOICES)
 
@@ -69,16 +77,15 @@ while True:
     display_winner(choice, computer_choice)
 
     while True:
-        prompt('Do you want to play again? (y/n)')
+        prompt(messages['play_again'])
         answer = input().lower()
 
         if answer.startswith('n') or answer.startswith('y'):
             break
 
-        prompt("That's not a valid choice.")
+        prompt(messages['invalid'])
 
     if answer[0] == 'n':
         break
 
-# capitalize spock in the prompt for VALID_CHOICES? (currently inconsistent)
-# use JSON file for messages?
+# don't ask to play again until after 3 wins
