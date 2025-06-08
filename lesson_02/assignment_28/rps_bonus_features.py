@@ -37,6 +37,13 @@ def display_winner(player, computer, winner):
         
     prompt(messages['separator'])
 
+def keep_score(dict, winner):
+    dict[winner] += 1
+
+    return dict
+
+score_dict = {'player': 0, 'computer': 0, 'tie': 0}
+
 while True:
     choice = ''
 
@@ -71,6 +78,7 @@ while True:
 
     round_winner = determine_winner(choice, computer_choice)
     display_winner(choice, computer_choice, round_winner)
+    score = keep_score(score_dict, round_winner)
 
     while True:
         prompt(messages['play_again'])
