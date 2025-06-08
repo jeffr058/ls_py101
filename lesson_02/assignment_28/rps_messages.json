@@ -8,8 +8,9 @@
   "shortened_choices": "\"r\": rock, \"p\": paper, \"sc\": scissors, \"l\": lizard, \"sp\": spock",
   "specify_s": "Please use \"sc\" for scissors or \"sp\" for spock.",
   "invalid": "That's not a valid choice.",
-  "player_score": "Your score: ",
-  "computer_score": "Computer's score: ",
+  "player_score": "Your score:",
+  "computer_score": "Computer's score:",
+  "num_of_ties": "Ties:",
   "grand_winner": "The grand winner is: ",
   "play_again": "Do you want to play again? (y/n)"
 }
