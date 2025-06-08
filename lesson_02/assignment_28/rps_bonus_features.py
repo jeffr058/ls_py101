@@ -26,16 +26,12 @@ def determine_winner(player, computer):
         winner = 'computer'
     return winner
 
-def display_winner(player, computer):
+def display_winner(player, computer, winner):
     prompt(messages['player_choice'] + f'{player}. ' + 
            messages['computer_choice'] + f'{computer}.')
 
-    winner = determine_winner(player, computer)
-
-    if winner == 'player':
-        prompt(messages['player_wins'])
-    elif winner == 'computer':
-        prompt(messages['computer_wins'])
+    if winner != 'tie':
+        prompt(messages['round_winner'] + f'{winner.capitalize()}.')
     else:
         prompt(messages['tie'])
         
@@ -46,7 +42,7 @@ while True:
 
     prompt(
         messages['choose'] + f'{', '.join(VALID_CHOICES)}\n' + 
-        messages['separator'] + 
+        messages['separator'] + '\n' + 
         messages['shortened_choices']
     )
 
@@ -73,8 +69,8 @@ while True:
 
     computer_choice = random.choice(VALID_CHOICES)
 
-    determine_winner(choice, computer_choice)
-    display_winner(choice, computer_choice)
+    round_winner = determine_winner(choice, computer_choice)
+    display_winner(choice, computer_choice, round_winner)
 
     while True:
         prompt(messages['play_again'])
