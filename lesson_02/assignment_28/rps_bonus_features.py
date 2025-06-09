@@ -1,6 +1,6 @@
 import json
 import random
-
+import pdb
 with open('rps_messages.json', 'r') as file:
     messages = json.load(file)
 
@@ -103,16 +103,24 @@ while restart == True:
         prompt(messages['play_again'])
         answer = input().lower()
 
-        if answer.startswith('y'):
+
+
+        while True:
+            if answer.startswith('y') or answer.startswith('n'):
+                break
+            else:
+                prompt(messages['invalid'])
+                answer = input().lower()
+
+
+        if answer[0] == ('y'):
             for key, value in score_dict.items():
                 score_dict[key] = 0
             ask_play_again = False
-        elif answer.startswith('n'):
-            restart = False
-            break
         else:
-            prompt(messages['invalid'])
-            answer = input().lower()
+            restart = False
+        
+        break
 
 # play again - dont let it loop back to asking y/n
 # change UI of program (separators)
