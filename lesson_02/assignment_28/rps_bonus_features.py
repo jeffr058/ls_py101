@@ -60,9 +60,7 @@ while restart:
     )
 
     while True:
-
         while True:
-
             choice = input()
             if choice == 's':
                 prompt(messages['specify_s'])
