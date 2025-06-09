@@ -55,8 +55,6 @@ restart = True
 counter_to_restart = 0
 
 while restart == True:
-    choice = ''
-
     prompt(
         f"{messages['choose']} {', '.join(VALID_CHOICES)}\n"
         f"{messages['separator']}\n" 
@@ -67,15 +65,14 @@ while restart == True:
 
         while True:
 
-            user_entry = input()
-
-            if user_entry == 's':
+            choice = input()
+            if choice == 's':
                 prompt(messages['specify_s'])
             else:
                 break
 
         for valid_choice in VALID_CHOICES:
-            if user_entry.lower() == valid_choice[0:len(user_entry)]:
+            if choice and choice.lower() == valid_choice[0:len(choice)]:
                 choice = valid_choice
                 break
 
@@ -95,7 +92,7 @@ while restart == True:
         f"{messages['computer_score']} {score_dict['computer']}. "
         f"{messages['num_of_ties']} {score_dict['tie']}."
     )
-
+    
     declare_grand_winner(score_dict)
 
     for key, value in score_dict.items():
@@ -117,5 +114,4 @@ while restart == True:
             restart = False
 
 # change UI of program (separators)
-# after initial choice, empty input gets 'r' over and over
 # empty input for play_again triggers if answer[0], gets error
