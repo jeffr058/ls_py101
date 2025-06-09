@@ -1,6 +1,6 @@
 import json
 import random
-import pdb
+
 with open('rps_messages.json', 'r') as file:
     messages = json.load(file)
 
@@ -36,26 +36,26 @@ def display_winner(player, computer, winner):
         prompt(f"{messages['round_winner']} {winner.capitalize()}.")
     else:
         prompt(messages['tie'])
- 
-def keep_score(dict, winner):
-    dict[winner] += 1
 
-    return dict
+def keep_score(dictionary, winner):
+    dictionary[winner] += 1
 
-def declare_grand_winner(dict):
-    for key, value in dict.items():
-        if (key != 'tie') and (value == 3):
-            prompt(f"{messages['grand_winner']} {key.capitalize()}!")
+    return dictionary
+
+def declare_grand_winner(dictionary):
+    for winner, tally in dictionary.items():
+        if (winner != 'tie') and (tally == 3):
+            prompt(f"{messages['grand_winner']} {winner.capitalize()}!")
             prompt(messages['separator'])
 
 score_dict = {'player': 0, 'computer': 0, 'tie': 0}
 restart = True
 ask_play_again = False
 
-while restart == True:
+while restart:
     prompt(
         f"{messages['choose']} {', '.join(VALID_CHOICES)}\n"
-        f"\n" 
+        f"\n"
         f"{messages['shortened_choices']}"
     )
 
@@ -84,7 +84,7 @@ while restart == True:
     round_winner = determine_winner(choice, computer_choice)
     display_winner(choice, computer_choice, round_winner)
     score = keep_score(score_dict, round_winner)
-    
+
     prompt(
         f"{messages['player_score']} {score_dict['player']}. "
         f"{messages['computer_score']} {score_dict['computer']}. "
@@ -99,16 +99,16 @@ while restart == True:
         if (key != 'tie') and (value == 3):
             ask_play_again = True
 
-    while ask_play_again == True:
+    while ask_play_again:
         prompt(messages['play_again'])
         answer = input().lower()
 
         while True:
             if answer.startswith('y') or answer.startswith('n'):
                 break
-            else:
-                prompt(messages['invalid'])
-                answer = input().lower()
+
+            prompt(messages['invalid'])
+            answer = input().lower()
 
         if answer[0] == ('y'):
             for key, value in score_dict.items():
@@ -116,5 +116,5 @@ while restart == True:
             ask_play_again = False
         else:
             restart = False
-        
+
         break
