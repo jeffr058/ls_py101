@@ -52,7 +52,7 @@ def declare_grand_winner(dict):
 
 score_dict = {'player': 0, 'computer': 0, 'tie': 0}
 restart = True
-counter_to_restart = 0
+ask_play_again = False
 
 while restart == True:
     prompt(
@@ -97,21 +97,22 @@ while restart == True:
 
     for key, value in score_dict.items():
         if (key != 'tie') and (value == 3):
-            counter_to_restart = 3
+            ask_play_again = True
 
-    while counter_to_restart == 3:
+    while ask_play_again == True:
         prompt(messages['play_again'])
         answer = input().lower()
 
-        if answer.startswith('n') or answer.startswith('y'):
+        if answer.startswith('y'):
             for key, value in score_dict.items():
                 score_dict[key] = 0
-            counter_to_restart = 0
+            ask_play_again = False
+        elif answer.startswith('n'):
+            restart = False
+            break
         else:
             prompt(messages['invalid'])
+            answer = input().lower()
 
-        if answer[0] == 'n':
-            restart = False
-
+# play again - dont let it loop back to asking y/n
 # change UI of program (separators)
-# empty input for play_again triggers if answer[0], gets error
