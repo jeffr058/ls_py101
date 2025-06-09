@@ -27,11 +27,13 @@ def determine_winner(player, computer):
     return winner
 
 def display_winner(player, computer, winner):
-    prompt(messages['player_choice'] + f'{player}. ' + 
-           messages['computer_choice'] + f'{computer}.')
+    prompt(
+        f"{messages['player_choice']} {player}. "
+        f"{messages['computer_choice']} {computer}."
+    )
 
     if winner != 'tie':
-        prompt(messages['round_winner'] + f'{winner.capitalize()}.')
+        prompt(f"{messages['round_winner']} {winner.capitalize()}.")
     else:
         prompt(messages['tie'])
         
@@ -48,9 +50,9 @@ while True:
     choice = ''
 
     prompt(
-        messages['choose'] + f'{', '.join(VALID_CHOICES)}\n' + 
-        messages['separator'] + '\n' + 
-        messages['shortened_choices']
+        f"{messages['choose']} {', '.join(VALID_CHOICES)}\n"
+        f"{messages['separator']}\n" 
+        f"{messages['shortened_choices']}"
     )
 
     while True:
@@ -79,7 +81,12 @@ while True:
     round_winner = determine_winner(choice, computer_choice)
     display_winner(choice, computer_choice, round_winner)
     score = keep_score(score_dict, round_winner)
-    prompt(f'{messages['player_score']} {score_dict['player']}. {messages['computer_score']} {score_dict['computer']}. {messages['num_of_ties']} {score_dict['tie']}.')
+    
+    prompt(
+        f"{messages['player_score']} {score_dict['player']}. "
+        f"{messages['computer_score']} {score_dict['computer']}. "
+        f"{messages['num_of_ties']} {score_dict['tie']}."
+    )
 
     while True:
         prompt(messages['play_again'])
