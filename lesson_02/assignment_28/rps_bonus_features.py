@@ -7,11 +7,11 @@ with open('rps_messages.json', 'r') as file:
 VALID_CHOICES = ['rock', 'paper', 'scissors', 'lizard', 'spock']
 
 COMBINATIONS = {
-    'rock': ('scissors', 'lizard'),
-    'paper': ('rock', 'spock'),
-    'scissors': ('paper', 'lizard'),
-    'lizard': ('paper', 'spock'),
-    'spock': ('scissors', 'rock'),
+    'rock':     ('scissors', 'lizard'),
+    'paper':    ('rock',     'spock'),
+    'scissors': ('paper',    'lizard'),
+    'lizard':   ('paper',    'spock'),
+    'spock':    ('scissors', 'rock'),
 }
 
 def prompt(message):
@@ -26,7 +26,7 @@ def determine_winner(player, computer):
         winner = 'computer'
     return winner
 
-def display_winner(player, computer, winner):
+def display_round_winner(player, computer, winner):
     prompt(
         f"{messages['player_choice']} {player}. "
         f"{messages['computer_choice']} {computer}."
@@ -80,7 +80,7 @@ while restart:
     computer_choice = random.choice(VALID_CHOICES)
 
     round_winner = determine_winner(choice, computer_choice)
-    display_winner(choice, computer_choice, round_winner)
+    display_round_winner(choice, computer_choice, round_winner)
     score = keep_score(score_dict, round_winner)
 
     prompt(
