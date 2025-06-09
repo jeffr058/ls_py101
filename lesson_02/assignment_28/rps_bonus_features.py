@@ -46,7 +46,7 @@ def keep_score(dict, winner):
 
 def declare_grand_winner(dict):
     for key, value in dict.items():
-        if value == 3:
+        if (key != 'tie') and (value == 3):
             prompt(f"{messages['grand_winner']} {key.capitalize()}!")
             prompt(messages['separator'])
 
@@ -98,8 +98,8 @@ while restart == True:
 
     declare_grand_winner(score_dict)
 
-    for value in score_dict.values():
-        if value == 3:
+    for key, value in score_dict.items():
+        if (key != 'tie') and (value == 3):
             counter_to_restart = 3
 
     while counter_to_restart == 3:
@@ -117,4 +117,5 @@ while restart == True:
             restart = False
 
 # change UI of program (separators)
-# don't let 'tie: 3' trigger & announce win
+# after initial choice, empty input gets 'r' over and over
+# empty input for play_again triggers if answer[0], gets error
