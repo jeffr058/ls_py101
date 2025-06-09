@@ -8,5 +8,5 @@ munsters_description = "the Munsters are CREEPY and Spooky."
 
 ## My solution
 ```python
-munsters_description.capitalize()
+print(munsters_description.capitalize())
 ```
