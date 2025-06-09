@@ -44,9 +44,17 @@ def keep_score(dict, winner):
 
     return dict
 
-score_dict = {'player': 0, 'computer': 0, 'tie': 0}
+def declare_grand_winner(dict):
+    for key, value in dict.items():
+        if value == 3:
+            prompt(f"{messages['grand_winner']} {key.capitalize()}!")
+            prompt(messages['separator'])
 
-while True:
+score_dict = {'player': 0, 'computer': 0, 'tie': 0}
+restart = True
+counter_to_restart = 0
+
+while restart == True:
     choice = ''
 
     prompt(
@@ -88,21 +96,25 @@ while True:
         f"{messages['num_of_ties']} {score_dict['tie']}."
     )
 
-    for key, value in score_dict.items():
+    declare_grand_winner(score_dict)
+
+    for value in score_dict.values():
         if value == 3:
-            prompt(f"{messages['grand_winner']} {key.capitalize()}!")
-            prompt(messages['separator'])
-    # while True:
-            prompt(messages['play_again'])
-            answer = input().lower()
+            counter_to_restart = 3
 
-            if answer.startswith('n') or answer.startswith('y'):
-                break
+    while counter_to_restart == 3:
+        prompt(messages['play_again'])
+        answer = input().lower()
 
+        if answer.startswith('n') or answer.startswith('y'):
+            for key, value in score_dict.items():
+                score_dict[key] = 0
+            counter_to_restart = 0
+        else:
             prompt(messages['invalid'])
 
-            if answer[0] == 'n':
-                break
-# n doesn't break out of the program
+        if answer[0] == 'n':
+            restart = False
+
 # change UI of program (separators)
-# reset score after 3rd win
+# don't let 'tie: 3' trigger & announce win

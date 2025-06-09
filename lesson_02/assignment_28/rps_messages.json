@@ -1,7 +1,7 @@
 {
   "player_choice": "Player chose",
   "computer_choice": "Computer chose",
-  "round_winner": "Winner:",
+  "round_winner": "Round winner:",
   "tie": "It's a tie.",
   "choose": "Choose one:",
   "separator": "--------------------",
