@@ -36,9 +36,7 @@ def display_winner(player, computer, winner):
         prompt(f"{messages['round_winner']} {winner.capitalize()}.")
     else:
         prompt(messages['tie'])
-        
-    prompt(messages['separator'])
-
+ 
 def keep_score(dict, winner):
     dict[winner] += 1
 
@@ -57,7 +55,7 @@ ask_play_again = False
 while restart == True:
     prompt(
         f"{messages['choose']} {', '.join(VALID_CHOICES)}\n"
-        f"{messages['separator']}\n" 
+        f"\n" 
         f"{messages['shortened_choices']}"
     )
 
@@ -92,7 +90,9 @@ while restart == True:
         f"{messages['computer_score']} {score_dict['computer']}. "
         f"{messages['num_of_ties']} {score_dict['tie']}."
     )
-    
+
+    print('\n')
+
     declare_grand_winner(score_dict)
 
     for key, value in score_dict.items():
@@ -103,15 +103,12 @@ while restart == True:
         prompt(messages['play_again'])
         answer = input().lower()
 
-
-
         while True:
             if answer.startswith('y') or answer.startswith('n'):
                 break
             else:
                 prompt(messages['invalid'])
                 answer = input().lower()
-
 
         if answer[0] == ('y'):
             for key, value in score_dict.items():
@@ -121,6 +118,3 @@ while restart == True:
             restart = False
         
         break
-
-# play again - dont let it loop back to asking y/n
-# change UI of program (separators)
