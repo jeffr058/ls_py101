@@ -88,16 +88,21 @@ while True:
         f"{messages['num_of_ties']} {score_dict['tie']}."
     )
 
-    while True:
-        prompt(messages['play_again'])
-        answer = input().lower()
+    for key, value in score_dict.items():
+        if value == 3:
+            prompt(f"{messages['grand_winner']} {key.capitalize()}!")
+            prompt(messages['separator'])
+    # while True:
+            prompt(messages['play_again'])
+            answer = input().lower()
 
-        if answer.startswith('n') or answer.startswith('y'):
-            break
+            if answer.startswith('n') or answer.startswith('y'):
+                break
 
-        prompt(messages['invalid'])
+            prompt(messages['invalid'])
 
-    if answer[0] == 'n':
-        break
-
-# don't ask to play again until after 3 wins
+            if answer[0] == 'n':
+                break
+# n doesn't break out of the program
+# change UI of program (separators)
+# reset score after 3rd win
