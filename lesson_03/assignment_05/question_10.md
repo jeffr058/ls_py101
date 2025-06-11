@@ -17,4 +17,6 @@ print(id(a) == id(b) == id(c))
 My prediction is that the comparison operator == will cause the second comparison to be True == id(c). If so, the output should be False. 
 
 However, I think id(c) will return the same identifier as id(a) and id(b).
+
+# I was unfamiliar with chain comparisons, so my initial prediction was incorrect. But I was familiar enough with the concept of interning to have gotten it right if I looked at the comparison operators accurately.
 ```
