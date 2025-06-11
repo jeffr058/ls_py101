@@ -13,6 +13,7 @@ How can you reliably test if a value is nan?
 ## My solution
 ```python
 I think the code will output True, because nan_value is assigned "nan" passed to the float function, which results in the value of nan.
+# Output is False. Python doesn't let you use == to determine if a value is nan.
 
 Bonus:
 Use math.isnan().
