@@ -28,5 +28,5 @@ We are defining another function named second with no parameters, and in its bod
 I think passing first() into print will return {'prop1': "hi there"}.
 I think passing second() into print will raise a SyntaxError because the dictionary should be, or at least start, following return on the same line for the function to return its value.
 ```python
-
+# Correction: My guess for second() was wrong. Having return by itself with cause the function to return None. Since the function will terminate after the return statement, the code following the line with the return statement is unreachable.
 ```
