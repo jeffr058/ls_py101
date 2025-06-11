@@ -24,5 +24,5 @@ What is the key difference between these implementations?
 ```python
 The first implementation adds new_element through the append method, mutating the list buffer by adding new_element as a single object.
 
-The second implementation adds new_element as a new element to the list buffer through list concatenation. This creates a new list that is assigned to the existing variable buffer. If new_element has nested elements, those elements are added to the top level of the new list that is created.
+The second implementation adds new_element as a new element to the list buffer through list concatenation. This creates a new list that is assigned to the existing variable buffer.
 ```
