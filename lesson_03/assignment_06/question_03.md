@@ -65,6 +65,9 @@ two is: ["two"]
 three is: ["three"]
 
 because inside the function body, each of these variables are being assigned something, making them shadow the global variables of the same names, therefore separate and contained inside the function.
+```python
+# Correction: variable shadowing happens as soon as the function is called and parameters are initialized
+```
 
 (B)
 These will print:
@@ -74,6 +77,9 @@ two is: ["two"]
 three is: ["three"]
 
 because inside the function body, each of these variables are being assigned something, making them shadow the global variables of the same names, therefore separate and contained inside the function.
+```python
+# Correction: variable shadowing happens as soon as the function is called and parameters are initialized
+```
 
 (C)
 These will print:
@@ -83,7 +89,6 @@ two is: ["three"]
 three is: ["one"]
 
 because in the function body, the global variables passed as arguments are having their element at index position 0 reassigned. The string object within each list is a reference to the same object in memory for the global and local list variables.
-
 ```python
-
+# Correction: it's not that the global variables are having THEIR elements modified when passed to the function, but rather that the function receives references to the same list objects that the global variables point to
 ```
