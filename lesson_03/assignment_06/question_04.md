@@ -30,8 +30,10 @@ def is_dot_separated_ip_address(input_string):
 
     while len(dot_separated_words) > 0:
         word = dot_separated_words.pop()
-        if not (0 <= int(word) <= 255):  # wrote out what is_an_ip_number(word) would do
-            break
+        if not is_an_ip_number(word):
+            return False  # I didn't realize that break would cause the returned value to be True even if an invalid value was flagged
 
     return True
+
+# Correction: my code for Alyssa's function was incomplete. I didn't look at the helpful code until after committing my first attempt at this exercise.
 ```
