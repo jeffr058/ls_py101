@@ -33,6 +33,10 @@
 
 # Code:
 def is_odd(int_num):
-    if abs(int_num) % 2 != 0:
-        return True
-    return False
+    return abs(int_num) % 2 == 1
+
+print(is_odd(-15))
+print(is_odd(0))
+print(is_odd(7))
+print(is_odd(10))
+print(is_odd(333))
