@@ -35,7 +35,9 @@
             # Invalid entry
 
 # Data Structure:
-    # None
+    # String for user inputs
+    # Float for calculations
+    # String interpolation for output formatting
 
 # Algorithm:
     # Ask the user for length and width in meters
@@ -70,7 +72,7 @@ def area_of_room():
     area_in_m = float(length_in_m) * float(width_in_m)
     area_in_ft = float(area_in_m) * M_TO_FT
 
-    print(f'The area of the room is: {area_in_m} square meters.')
-    print(f'The area of the room is: {area_in_ft} square feet.')
+    print(f'The area of the room is: {area_in_m:.2f} square meters.')
+    print(f'The area of the room is: {area_in_ft:.2f} square feet.')
 
 area_of_room()
