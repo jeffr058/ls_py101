@@ -50,7 +50,7 @@
 
 # Manual test:
     # bill_amount = 180.0
-    # tip_rate = 0.2
+    # tip_rate = 20.0
     # tip_amount = 36.0
     # total_amount = 216.0
     # The tip is $36.00
@@ -58,9 +58,9 @@
 
 # Code:
 bill_amount = float(input('What is the bill? '))
-tip_rate = float(input('What is the tip percentage? ')) / 100
+tip_rate = float(input('What is the tip percentage? '))
 
-tip_amount = bill_amount * tip_rate
+tip_amount = bill_amount * (tip_rate / 100)
 total_amount = bill_amount + tip_amount
 
 print(f'The tip is ${tip_amount:.2f}')
