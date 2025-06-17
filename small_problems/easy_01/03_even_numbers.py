@@ -39,9 +39,9 @@
             # Print the number
 
 # Code:
-for num in range(1, 99):
+for num in range(1, 100):
     if num % 2 == 0:
         print(num)
 
 # Bonus:
-# No, if you have to start at 1, you have to skip over that start value first.
+# No, if you have to start at 1, you have to skip over that start value first. If you can change the number to start at, you can use start at 2, stop at 100, and step by 2.
