@@ -33,6 +33,7 @@
 
 # Are there any other rules that I missed?
     # Input for sum or product choice is 's' or 'p'
+    # Print an empty line before the result
 
 # Mental Model:
     # Get the number and desired result (sum or product). Convert the entered 
@@ -89,6 +90,7 @@
 integer = int(input('Please enter an integer greater than 0: '))
 sum_or_product = input('Enter "s" to compute the sum, '
                        'or "p" to compute the product: ')
+print()
 
 if sum_or_product == 's':
     sum_or_product = 'sum'
