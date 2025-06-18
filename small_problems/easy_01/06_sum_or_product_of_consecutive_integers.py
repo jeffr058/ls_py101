@@ -95,15 +95,13 @@ print()
 if sum_or_product == 's':
     sum_or_product = 'sum'
     result = 0
+    for number in range(1, integer + 1):
+        result += number
 elif sum_or_product == 'p':
     sum_or_product = 'product'
     result = 1
-
-for number in range(1, integer + 1):
-    if sum_or_product == 'sum':
-        result += number
-    elif sum_or_product == 'product':
+    for number in range(1, integer + 1):
         result *= number
 
-print(f'The {sum_or_product} of the integers between 1 and {integer} is '
-      f'{result}.')
+print(f'The {sum_or_product} of the integers between 1 and '
+      f'{integer} is {result}.')
