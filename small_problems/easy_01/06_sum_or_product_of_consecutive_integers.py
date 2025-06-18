@@ -93,14 +93,14 @@ sum_or_product = input('Enter "s" to compute the sum, '
 if sum_or_product == 's':
     sum_or_product = 'sum'
     result = 0
-if sum_or_product == 'p':
+elif sum_or_product == 'p':
     sum_or_product = 'product'
     result = 1
 
 for number in range(1, integer + 1):
     if sum_or_product == 'sum':
         result += number
-    if sum_or_product == 'product':
+    elif sum_or_product == 'product':
         result *= number
 
 print(f'The {sum_or_product} of the integers between 1 and {integer} is '
